@@ -2,11 +2,11 @@ import java.util.*;
 
 public class ConnectFour {
 
-    public static void main(String[]args) {
+    public static void main(String[]args) { //main class
 
         Scanner sc = new Scanner(System.in);
         int row,col;
-        while(true){
+        while(true){ //determines the main height of board
             System.out.print("What would you like the height of the board to be ? ");
             row = sc.nextInt();
             if(row >= 4){
@@ -16,7 +16,7 @@ public class ConnectFour {
                 System.out.println("Height should be at least 4. Please try again!");
             }
         }
-        while(true){
+        while(true){ //determines the main length of board
             System.out.print("What would you like the length of the board to be ? ");
             col = sc.nextInt();
             if(col >= 4){
@@ -79,7 +79,7 @@ public class ConnectFour {
         }
         sc.close();
     }
-    public static void printBoard(char[][] array) {
+    public static void printBoard(char[][] array) { //Takes the row and col variables to print the board
         for(int i = array.length-1; i >= 0; i--){
             for(int j = 0;j < array[0].length; j++){
                 System.out.print(array[i][j]+" ");
@@ -103,7 +103,7 @@ public class ConnectFour {
         }
         return -1;
     }
-    public static boolean checkIfWinner(char[][] array,int col,int row,char chipType) {
+    public static boolean checkIfWinner(char[][] array,int col,int row,char chipType) {// checks to see if a player has 4 in a row
         int count = 0;
         for(int i = 0;i < array.length; i++){
             if(array[i][col] == chipType){
